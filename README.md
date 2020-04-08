@@ -1,0 +1,2 @@
+# CurvGN
+Curvature Graph Network
