@@ -3,7 +3,6 @@ import torch
 import torch.nn.functional as F
 import torch_geometric.transforms as T
 import numpy
-import json
 from torch_geometric.utils import add_self_loops, remove_self_loops,degree,softmax
 from baselines.curvGN import curvGN
 
