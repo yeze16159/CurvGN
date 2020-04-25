@@ -1,13 +1,12 @@
 import sys
 def plot_graph(Conv_Method,n_num):
-    from baselines import Rand,Plain,ConvZeNMLP,Randn,gat,gcn,gcn_mlp
+    from baselines import Rand,Plain,Randn,gat,gcn,gcn_mlp
     from syndata.SynDataset import SynDataset
     import torch
     import torch.nn.functional as F
     from torch_geometric.data import Data
     import random
     import numpy as np
-    import json
     import math
     from sklearn.model_selection import KFold
     import scipy.io as sio
