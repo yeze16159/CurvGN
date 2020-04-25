@@ -7,7 +7,6 @@ def heatmap_gen(Conv_Method,n_num,dset_name):
     from torch_geometric.data import Data
     import random
     import numpy as np
-    import json
     import math
     import scipy.io as sio
     def train(train_mask):
