@@ -32,7 +32,7 @@ Curvature Graph Network
  Please cite our paper in following if you use this code in your work:
  
  ```
-@inproceedings{kipf2017semi,
+@inproceedings{Ze2020curv,
   title={Curvature Graph Network},
   author={Ze Ye,Kin Sum Liu,Tengfei Ma,Jie Gao, Chao Chen},
   booktitle={International Conference on Learning Representations (ICLR)},
