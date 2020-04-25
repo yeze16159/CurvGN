@@ -29,7 +29,7 @@ def call(data,name,num_features,num_classes):
     filename='../data/curvature/graph_'+name+'.edge_list'
     f=open(filename)
     cur_list=list(f)
-    if name=='Cora':
+    if name=='Cora' or name=='CS':
         ricci_cur=[[] for i in range(len(cur_list))]
         for i in range(len(cur_list)):
             ricci_cur[i]=[num(s) for s in cur_list[i].split(' ',2)]
