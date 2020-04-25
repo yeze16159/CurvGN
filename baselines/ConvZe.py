@@ -4,7 +4,6 @@ import torch.nn.functional as F
 import torch_geometric.transforms as T
 from torch.nn import Sequential as seq, Parameter,LeakyReLU,init,Linear
 import numpy
-import json
 from torch_geometric.nn import MessagePassing
 from torch_geometric.utils import add_self_loops, remove_self_loops,degree,softmax
 class  ConvZe(MessagePassing):
