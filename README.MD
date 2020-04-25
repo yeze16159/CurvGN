@@ -1,2 +1,0 @@
-"Curvature Graph Network"
-
