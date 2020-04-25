@@ -31,8 +31,8 @@ wait_total=100
 pipelines=['ConvCurv','gcn']
 pipeline_acc={'ConvCurv':[i for i in times],'gcn':[i for i in times]}
 pipeline_acc_sum={'ConvCurv':0,'gcn':0}
-#d_names=['Cora','Citeseer','PubMed','Photo','Computers','CS','Physics']
-d_names=['Photo','Computers','CS','Physics']
+d_names=['Cora','Citeseer','PubMed','Photo','Computers','CS','Physics']
+#d_names=['Photo','Computers','CS','Physics']
 for d_name in d_names:
     f2=open('scores/pipe_benchmark_' +d_name+ '_scores.txt', 'w+')
     f2.write('{0:7} {1:7} {2:7}\n'.format(d_name,'ConvCurv','GCN'))
