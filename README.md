@@ -4,15 +4,15 @@ Curvature Graph Network
 
 ## Requirement:
 
-*numpy
+* numpy
   
-*torch
+* torch
   
-*torch_geometric
+* torch_geometric
   
- *networkx
+* networkx
   
- *GraphRicciCurvature
+* GraphRicciCurvature
  
  ## Run BenchMark:
  ```bash
