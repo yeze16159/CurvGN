@@ -39,12 +39,12 @@ def call(data,name,num_features,num_classes):
             ricci_cur[i]=[num(s) for s in cur_list[i].split(' ',2)]
             ricci_cur[i+len(cur_list)]=[ricci_cur[i][1],ricci_cur[i][0],ricci_cur[i][2]]
     ricci_cur=sorted(ricci_cur)
-    w_mul=[(i[2]-1)/2 for i in ricci_cur]
+    w_mul=[(i[2]+1)/2 for i in ricci_cur]
     w_mul=w_mul+[0 for i in range(data.x.size(0))]
     w_mul=torch.tensor(w_mul, dtype=torch.float)
     data.edge_index, _ = remove_self_loops(data.edge_index)
     data.edge_index, _ = add_self_loops(data.edge_index,num_nodes=data.x.size(0))
-    data.w_mul=softmax(w_mul,data.edge_index[0]).view(-1,1)
+    #data.w_mul=softmax(w_mul,data.edge_index[0]).view(-1,1)
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     #change to call function
     data.w_mul = data.w_mul.to(device)
