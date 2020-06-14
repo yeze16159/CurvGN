@@ -84,7 +84,7 @@ for d_name in d_names:
             pipeline_acc_sum[Conv_method]=pipeline_acc_sum[Conv_method]+test_acc/len(times)
             log ='Epoch: 200, dataset name: '+ d_name + ', Method: '+ Conv_method + ' Test: {:.4f} \n'
             print((log.format(pipeline_acc[Conv_method][time])))
-        f2.write('{0:4d} {1:4f} {2:4f}\n'.format(time,pipeline_acc['ConvCurv'][time]))
+        f2.write('{0:4d} {1:4f}\n'.format(time,pipeline_acc['ConvCurv'][time]))
         f2.flush()
     f2.write('{0:4} {1:4f}\n'.format('std',np.std(pipeline_acc['ConvCurv'])))
     f2.write('{0:4} {1:4f}\n'.format('mean',np.mean(pipeline_acc['ConvCurv'])))
