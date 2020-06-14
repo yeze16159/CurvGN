@@ -29,8 +29,8 @@ def test(train_mask,val_mask,test_mask):
 times=range(50)
 wait_total=100
 pipelines=['ConvCurv']
-pipeline_acc={'ConvCurv':[i for i in times],'gcn':[i for i in times]}
-pipeline_acc_sum={'ConvCurv':0,'gcn':0}
+pipeline_acc={'ConvCurv':[i for i in times]}
+pipeline_acc_sum={'ConvCurv':0}
 d_names=['Cora','Citeseer','PubMed','Photo','Computers','CS','Physics']
 #d_names=['Photo','Computers','CS','Physics']
 for d_name in d_names:
