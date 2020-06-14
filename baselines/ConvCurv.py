@@ -44,6 +44,7 @@ def call(data,name,num_features,num_classes):
     w_mul=torch.tensor(w_mul, dtype=torch.float)
     data.edge_index, _ = remove_self_loops(data.edge_index)
     data.edge_index, _ = add_self_loops(data.edge_index,num_nodes=data.x.size(0))
+    data.w_mul=torch.tensor(w_mul)
     #data.w_mul=softmax(w_mul,data.edge_index[0]).view(-1,1)
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     #change to call function
