@@ -35,7 +35,7 @@ d_names=['Cora','Citeseer','PubMed','Photo','Computers','CS','Physics']
 #d_names=['Photo','Computers','CS','Physics']
 for d_name in d_names:
     f2=open('scores/pipe_benchmark_' +d_name+ '_scores.txt', 'w+')
-    f2.write('{0:7} {1:7} {2:7}\n'.format(d_name,'ConvCurv','GCN'))
+    f2.write('{0:7} {1:7}\n'.format(d_name,'ConvCurv'))
     f2.flush()
     if d_name=='Cora' or d_name=='Citeseer' or d_name=='PubMed':
         d_loader='Planetoid'
@@ -84,8 +84,8 @@ for d_name in d_names:
             pipeline_acc_sum[Conv_method]=pipeline_acc_sum[Conv_method]+test_acc/len(times)
             log ='Epoch: 200, dataset name: '+ d_name + ', Method: '+ Conv_method + ' Test: {:.4f} \n'
             print((log.format(pipeline_acc[Conv_method][time])))
-        f2.write('{0:4d} {1:4f} {2:4f}\n'.format(time,pipeline_acc['ConvCurv'][time],pipeline_acc['gcn'][time]))
+        f2.write('{0:4d} {1:4f} {2:4f}\n'.format(time,pipeline_acc['ConvCurv'][time]))
         f2.flush()
-    f2.write('{0:4} {1:4f} {2:4f}\n'.format('std',np.std(pipeline_acc['ConvCurv']),np.std(pipeline_acc['gcn'])))
-    f2.write('{0:4} {1:4f} {2:4f}\n'.format('mean',np.mean(pipeline_acc['ConvCurv']),np.mean(pipeline_acc['gcn'])))
+    f2.write('{0:4} {1:4f}\n'.format('std',np.std(pipeline_acc['ConvCurv'])))
+    f2.write('{0:4} {1:4f}\n'.format('mean',np.mean(pipeline_acc['ConvCurv'])))
     f2.close()
