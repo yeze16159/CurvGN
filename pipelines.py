@@ -64,19 +64,15 @@ for d_name in d_names:
             for epoch in range(1, 201): 
                 train(train_mask)
                 train_acc,val_acc,tmp_test_acc,val_loss = test(train_mask,val_mask,test_mask)
-                if val_acc>=best_val_acc or val_loss<=best_val_loss:
-                    if val_acc>=best_val_acc:
-                        test_acc=tmp_test_acc
-                        early_val_acc=val_acc
-                        early_val_loss=val_loss
-                    best_val_acc = np.max((val_acc, best_val_acc))
-                    best_val_loss= np.min((val_loss, best_val_loss))
+                if val_acc>=best_val_acc:
+                    test_acc=tmp_test_acc
+                    best_val_acc=val_acc
+                    best_val_loss=val_loss
                     wait_step=0
                 else:
                     wait_step += 1
                     if wait_step == wait_total:
                         print('Early stop! Min loss: ', best_val_loss, ', Max accuracy: ', best_val_acc)
-                        print('Early stop model validation loss: ', early_val_loss, ', accuracy: ', early_val_acc)
                         break
             del model
             del data
