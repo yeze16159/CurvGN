@@ -5,7 +5,7 @@ import torch.nn.functional as F
 from torch_geometric.data import Data
 import random
 import numpy as np
-from baselines import ConvCurv,gcn
+from baselines import ConvCurv
 #load the neural networks
 
 def train(train_mask):
